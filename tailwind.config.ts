@@ -46,8 +46,12 @@ export default {
 					light: 'hsl(var(--elite-light))'
 				},
 				trust: {
-					green: 'hsl(var(--trust-green))',
+					verified: 'hsl(var(--trust-verified))',
 					badge: 'hsl(var(--trust-badge))'
+				},
+				status: {
+					online: 'hsl(var(--online-green))',
+					success: 'hsl(var(--success-green))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
