@@ -2,60 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Premium Code Envision Design System */
+/* World-Class Enterprise Design System */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
-    /* Base Colors - Premium Tech Palette */
+    /* Enterprise Color Palette - Confidence & Trust */
     --background: 0 0% 100%;
-    --foreground: 224 15% 15%;
+    --foreground: 216 19% 16%;
 
-    /* Card System */
+    /* Card System - Elevated */
     --card: 0 0% 100%;
-    --card-foreground: 224 15% 15%;
+    --card-foreground: 216 19% 16%;
 
-    /* Premium Blue Palette - Trust & Authority */
-    --primary: 224 100% 58%;
+    /* Primary Brand - Strategic Blue */
+    --primary: 214 84% 56%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 224 100% 52%;
-    --primary-glow: 224 100% 85%;
+    --primary-hover: 214 84% 50%;
+    --primary-glow: 214 84% 85%;
+    --primary-muted: 214 84% 95%;
 
-    /* Deep Purple - Innovation & Luxury */
-    --secondary: 258 100% 68%;
+    /* Secondary Brand - Innovation Purple */
+    --secondary: 259 94% 51%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-hover: 258 100% 62%;
-    --secondary-glow: 258 100% 90%;
+    --secondary-hover: 259 94% 45%;
+    --secondary-glow: 259 94% 85%;
+    --secondary-muted: 259 94% 95%;
 
-    /* Elite Dark Theme */
-    --elite-dark: 226 30% 12%;
-    --elite-dark-hover: 226 30% 16%;
+    /* Accent Brand - Energy Orange */
+    --accent-brand: 22 93% 58%;
+    --accent-brand-foreground: 0 0% 100%;
+    --accent-brand-hover: 22 93% 52%;
+
+    /* Elite Neutrals */
+    --elite-dark: 216 32% 17%;
+    --elite-dark-hover: 216 32% 21%;
     --elite-light: 0 0% 98%;
+    --elite-medium: 216 19% 27%;
 
-    /* Trust Elements - Professional Blues */
-    --trust-verified: 224 100% 45%;
-    --trust-badge: 221 39% 11%;
+    /* Trust & Verification */
+    --trust-verified: 142 76% 36%;
+    --trust-badge: 216 32% 17%;
     
     /* Status Colors */
     --online-green: 142 76% 36%;
     --success-green: 142 76% 36%;
+    --warning-amber: 43 96% 56%;
+    --error-red: 0 84% 60%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(224 100% 58%), hsl(258 100% 68%));
-    --gradient-hero: linear-gradient(135deg, hsl(226 30% 12%) 0%, hsl(224 100% 20%) 50%, hsl(258 100% 25%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(224 100% 98%) 100%);
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(224 100% 58% / 0.15) 0%, transparent 70%);
+    /* Enterprise Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 84% 56%), hsl(259 94% 51%));
+    --gradient-hero: linear-gradient(135deg, hsl(216 32% 17%) 0%, hsl(214 84% 25%) 35%, hsl(259 94% 30%) 100%);
+    --gradient-hero-light: linear-gradient(135deg, hsl(214 84% 95%) 0%, hsl(259 94% 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(214 84% 98%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(214 84% 98%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(214 84% 56% / 0.1) 0%, transparent 70%);
+    --gradient-mesh: radial-gradient(circle at 25% 25%, hsl(214 84% 85% / 0.3) 0%, transparent 50%), 
+                     radial-gradient(circle at 75% 75%, hsl(259 94% 85% / 0.3) 0%, transparent 50%);
 
-    /* Shadows - Premium Depth */
-    --shadow-premium: 0 25px 50px -12px hsl(224 100% 58% / 0.25);
-    --shadow-glow: 0 0 40px hsl(224 100% 58% / 0.3);
-    --shadow-card: 0 4px 20px hsl(224 15% 15% / 0.08);
-    --shadow-elevation: 0 8px 32px hsl(224 15% 15% / 0.12);
+    /* Enterprise Shadows */
+    --shadow-premium: 0 25px 50px -12px hsl(214 84% 56% / 0.25);
+    --shadow-glow: 0 0 40px hsl(214 84% 56% / 0.3);
+    --shadow-card: 0 1px 3px hsl(216 19% 16% / 0.05), 0 4px 8px hsl(216 19% 16% / 0.1);
+    --shadow-elevation: 0 4px 16px hsl(216 19% 16% / 0.1), 0 8px 32px hsl(216 19% 16% / 0.15);
+    --shadow-cinematic: 0 32px 64px -8px hsl(216 32% 17% / 0.4);
 
-    /* Animations */
-    --transition-premium: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Motion Design */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-cinematic: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
 
     /* Standard Colors */
     --muted: 224 12% 95%;
@@ -128,9 +145,25 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
-  /* Premium Typography */
-  h1, h2, h3, h4, h5, h6 {
+  /* Enterprise Typography System */
+  h1, h2, h3 {
+    @apply font-space-grotesk font-bold tracking-tight;
+  }
+  
+  h4, h5, h6 {
     @apply font-space-grotesk font-semibold tracking-tight;
+  }
+  
+  .display-xl {
+    @apply text-6xl md:text-7xl lg:text-8xl font-space-grotesk font-black tracking-tighter leading-none;
+  }
+  
+  .display-lg {
+    @apply text-5xl md:text-6xl lg:text-7xl font-space-grotesk font-bold tracking-tight leading-tight;
+  }
+  
+  .headline-enterprise {
+    @apply font-playfair-display font-bold text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight;
   }
 
   /* Smooth Scrolling */
@@ -138,21 +171,37 @@
     scroll-behavior: smooth;
   }
 
-  /* Premium Animations */
+  /* Enterprise Motion System */
   .animate-fade-in {
     animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
 
   .animate-slide-up {
     animation: slideUp 0.8s ease-out forwards;
   }
 
+  .animate-scale-in {
+    animation: scaleIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
   .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 3s ease-in-out infinite alternate;
   }
 
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-parallax {
+    animation: parallax 20s linear infinite;
+  }
+
+  .animate-cinematic {
+    animation: cinematic 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
   }
 
   /* Gradient Text */
@@ -163,14 +212,39 @@
     background-clip: text;
   }
 
-  /* Premium Hover Effects */
+  /* Enterprise Interactive Effects */
   .hover-lift {
-    transition: var(--transition-premium);
+    transition: var(--transition-spring);
   }
 
   .hover-lift:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-premium);
+  }
+
+  .hover-scale {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+
+  .hover-glow {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .hover-enterprise {
+    transition: var(--transition-spring);
+  }
+
+  .hover-enterprise:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: var(--shadow-elevation);
   }
 
   /* Glowing Border */
@@ -202,9 +276,19 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes glow {
@@ -214,5 +298,23 @@
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes parallax {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes cinematic {
+  from { 
+    opacity: 0; 
+    transform: translateY(100px) scale(0.9);
+    filter: blur(10px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
 }

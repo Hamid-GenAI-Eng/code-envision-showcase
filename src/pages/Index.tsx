@@ -1,4 +1,4 @@
-import Navigation from "@/components/Navigation";
+import EnterpriseNavigation from "@/components/EnterpriseNavigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
@@ -10,7 +10,7 @@ import ChatBot from "@/components/ChatBot";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Navigation />
+      <EnterpriseNavigation />
       <Hero />
       <About />
       <Services />
