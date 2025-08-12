@@ -16,6 +16,8 @@ import ERPService from "./pages/services/ERPService";
 import CRMService from "./pages/services/CRMService";
 import WebAppsService from "./pages/services/WebAppsService";
 import AIMLService from "./pages/services/AIMLService";
+import CloudService from "./pages/services/CloudService";
+import GenAIService from "./pages/services/GenAIService";
 
 const queryClient = new QueryClient();
 
@@ -35,7 +37,11 @@ const App = () => (
           <Route path="/services/erp" element={<ERPService />} />
           <Route path="/services/crm" element={<CRMService />} />
           <Route path="/services/web-apps" element={<WebAppsService />} />
+          <Route path="/services/web" element={<WebAppsService />} />
           <Route path="/services/ai-ml" element={<AIMLService />} />
+          <Route path="/services/ai" element={<AIMLService />} />
+          <Route path="/services/cloud" element={<CloudService />} />
+          <Route path="/services/genai" element={<GenAIService />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/insights" element={<Insights />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

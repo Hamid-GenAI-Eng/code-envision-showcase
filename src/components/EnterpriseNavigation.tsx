@@ -224,7 +224,7 @@ const EnterpriseNavigation = () => {
             </button>
 
             <a 
-              href="/blog"
+              href="/insights"
               className={`px-4 py-2 rounded-lg transition-all font-medium ${
                 isScrolled 
                   ? "text-foreground hover:text-primary hover:bg-primary-muted" 
@@ -324,7 +324,7 @@ const EnterpriseNavigation = () => {
                 >
                   Case Studies
                 </button>
-                <a href="/blog" className="block text-foreground hover:text-primary font-medium">
+                <a href="/insights" className="block text-foreground hover:text-primary font-medium">
                   Insights
                 </a>
                 <a href="/careers" className="block text-foreground hover:text-primary font-medium">
