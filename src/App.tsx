@@ -18,6 +18,10 @@ import WebAppsService from "./pages/services/WebAppsService";
 import AIMLService from "./pages/services/AIMLService";
 import CloudService from "./pages/services/CloudService";
 import GenAIService from "./pages/services/GenAIService";
+import FinancialServices from "./pages/industries/FinancialServices";
+import Healthcare from "./pages/industries/Healthcare";
+import Manufacturing from "./pages/industries/Manufacturing";
+import Ecommerce from "./pages/industries/Ecommerce";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +48,10 @@ const App = () => (
           <Route path="/services/genai" element={<GenAIService />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/insights" element={<Insights />} />
+          <Route path="/industries/financial-services" element={<FinancialServices />} />
+          <Route path="/industries/healthcare" element={<Healthcare />} />
+          <Route path="/industries/manufacturing" element={<Manufacturing />} />
+          <Route path="/industries/ecommerce" element={<Ecommerce />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

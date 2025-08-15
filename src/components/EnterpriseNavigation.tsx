@@ -50,7 +50,7 @@ const EnterpriseNavigation = () => {
   ];
 
   const industries = [
-    { name: "Financial Services", href: "/industries/fintech" },
+    { name: "Financial Services", href: "/industries/financial-services" },
     { name: "Healthcare", href: "/industries/healthcare" },
     { name: "Manufacturing", href: "/industries/manufacturing" },
     { name: "E-commerce", href: "/industries/ecommerce" }
@@ -122,7 +122,11 @@ const EnterpriseNavigation = () => {
               
               {/* Mega Menu Dropdown */}
               {activeSubmenu === 'services' && (
-                <div className="absolute top-full left-0 mt-2 w-[600px] bg-white rounded-2xl shadow-cinematic border border-border/50 p-8 animate-fade-in-up">
+                <div 
+                  className="absolute top-full left-0 mt-1 w-[600px] bg-white rounded-2xl shadow-cinematic border border-border/50 p-8 animate-fade-in-up z-50"
+                  onMouseEnter={() => setActiveSubmenu('services')}
+                  onMouseLeave={() => setActiveSubmenu(null)}
+                >
                   <div className="grid grid-cols-2 gap-8">
                     {services.map((category, categoryIndex) => (
                       <div key={categoryIndex}>
@@ -186,7 +190,11 @@ const EnterpriseNavigation = () => {
               </button>
               
               {activeSubmenu === 'industries' && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-elevation border border-border/50 p-4 animate-fade-in-up">
+                <div 
+                  className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-elevation border border-border/50 p-4 animate-fade-in-up z-50"
+                  onMouseEnter={() => setActiveSubmenu('industries')}
+                  onMouseLeave={() => setActiveSubmenu(null)}
+                >
                   {industries.map((industry, index) => (
                     <a
                       key={index}
