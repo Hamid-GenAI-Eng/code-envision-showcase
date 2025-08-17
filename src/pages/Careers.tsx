@@ -87,7 +87,7 @@ const Careers = () => {
       <EnterpriseNavigation />
       
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 overflow-hidden">
+      <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
@@ -123,7 +123,7 @@ const Careers = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="p-6 text-center group hover:shadow-elevation transition-all duration-300">
+              <Card key={index} className="p-6 text-center group hover:shadow-elevation hover:border-primary/20 transition-all duration-300">
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl mb-4 group-hover:bg-primary/20 transition-colors">
                   <benefit.icon className="w-6 h-6 text-primary" />
                 </div>
@@ -149,7 +149,7 @@ const Careers = () => {
 
           <div className="space-y-6">
             {openRoles.map((role, index) => (
-              <Card key={index} className="p-6 hover:shadow-elevation transition-all duration-300 group">
+              <Card key={index} className="p-6 hover:shadow-elevation hover:border-primary/20 transition-all duration-300 group">
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                   <div className="flex-1">
                     <div className="flex items-start justify-between mb-3">

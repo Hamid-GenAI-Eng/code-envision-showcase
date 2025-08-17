@@ -23,6 +23,10 @@
     --primary-glow: 214 84% 85%;
     --primary-muted: 214 84% 95%;
 
+    /* Status colors with proper HSL values */
+    --status-online: 142 76% 36%;
+    --trust-green: 142 76% 36%;
+
     /* Secondary Brand - Innovation Purple */
     --secondary: 259 94% 51%;
     --secondary-foreground: 0 0% 100%;

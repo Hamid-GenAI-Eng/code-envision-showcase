@@ -95,7 +95,7 @@ const Insights = () => {
       <EnterpriseNavigation />
       
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 overflow-hidden">
+      <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
@@ -121,7 +121,7 @@ const Insights = () => {
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Sidebar */}
           <aside className="lg:col-span-1">
-            <Card className="p-6 sticky top-24">
+            <Card className="p-6 sticky top-32">
               <h3 className="text-lg font-semibold text-foreground mb-4">Categories</h3>
               <div className="space-y-2">
                 {categories.map((category, index) => (
@@ -220,7 +220,7 @@ const Insights = () => {
               
               <div className="grid md:grid-cols-2 gap-6">
                 {recentPosts.map((post, index) => (
-                  <Card key={index} className="group hover:shadow-elevation transition-all duration-300 cursor-pointer">
+                  <Card key={index} className="group hover:shadow-elevation hover:border-primary/20 transition-all duration-300 cursor-pointer">
                     <div className="aspect-video bg-gradient-subtle relative overflow-hidden">
                       <div className="absolute inset-0 bg-primary/5" />
                       <div className="absolute top-4 left-4">

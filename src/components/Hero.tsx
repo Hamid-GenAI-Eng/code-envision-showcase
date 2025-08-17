@@ -56,7 +56,7 @@ const Hero = () => {
         <div className="animate-cinematic">
           {/* Premium Badge */}
           <div className="flex items-center justify-center mb-8">
-            <Badge className="bg-white/10 text-white border-white/20 backdrop-blur-sm px-6 py-2 text-sm font-medium">
+            <Badge className="bg-gradient-primary text-white border-white/20 backdrop-blur-sm px-6 py-2 text-sm font-medium shadow-glow">
               <Sparkles className="w-4 h-4 mr-2" />
               World-Class Enterprise Solutions
             </Badge>
@@ -70,7 +70,7 @@ const Hero = () => {
               </span>{" "}
               <span className="text-white">Vision Into</span>
             </span>
-            <span className="block headline-enterprise text-white">
+            <span className="block text-4xl md:text-5xl lg:text-6xl font-playfair-display font-bold text-white">
               Digital Excellence
             </span>
           </h1>

@@ -66,7 +66,7 @@ const EnterpriseNavigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
       isScrolled 
         ? "bg-white/95 backdrop-blur-lg shadow-elevation border-b border-border/50" 
         : "bg-transparent"
@@ -105,6 +105,17 @@ const EnterpriseNavigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
+            {/* Home Button */}
+            <a 
+              href="/"
+              className={`px-4 py-2 rounded-lg transition-all font-medium ${
+                isScrolled 
+                  ? "text-foreground hover:text-primary hover:bg-primary-muted" 
+                  : "text-white hover:text-primary-glow hover:bg-white/10"
+              }`}
+            >
+              Home
+            </a>
             {/* Services Mega Menu */}
             <div 
               className="relative group"
@@ -123,9 +134,7 @@ const EnterpriseNavigation = () => {
               {/* Mega Menu Dropdown */}
               {activeSubmenu === 'services' && (
                 <div 
-                  className="absolute top-full left-0 mt-1 w-[600px] bg-white rounded-2xl shadow-cinematic border border-border/50 p-8 animate-fade-in-up z-50"
-                  onMouseEnter={() => setActiveSubmenu('services')}
-                  onMouseLeave={() => setActiveSubmenu(null)}
+                  className="absolute top-full left-0 mt-1 w-[600px] bg-white rounded-2xl shadow-cinematic border border-border/50 p-8 animate-fade-in-up z-[110]"
                 >
                   <div className="grid grid-cols-2 gap-8">
                     {services.map((category, categoryIndex) => (
@@ -191,9 +200,7 @@ const EnterpriseNavigation = () => {
               
               {activeSubmenu === 'industries' && (
                 <div 
-                  className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-elevation border border-border/50 p-4 animate-fade-in-up z-50"
-                  onMouseEnter={() => setActiveSubmenu('industries')}
-                  onMouseLeave={() => setActiveSubmenu(null)}
+                  className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-elevation border border-border/50 p-4 animate-fade-in-up z-[110]"
                 >
                   {industries.map((industry, index) => (
                     <a

@@ -86,7 +86,7 @@ const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="glow-border hover-lift group cursor-pointer h-full"
+              className="group cursor-pointer h-full border hover:border-primary/20 hover:shadow-elevation transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="pb-4">
