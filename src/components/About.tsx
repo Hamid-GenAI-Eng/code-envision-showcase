@@ -17,29 +17,13 @@ const About = () => {
             Built on <span className="gradient-text">Trust & Innovation</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Founded in July 2025, Code Envision represents the pinnacle of software excellence. 
-            Legally registered with the Government of Pakistan, we combine visionary leadership 
-            with cutting-edge technology.
+            Founded in July 2025, Code Envision represents the pinnacle of software excellence, 
+            combining visionary leadership with cutting-edge technology.
           </p>
         </div>
 
-        {/* Company Trust Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-20">
-          <Card className="glow-border hover-lift text-center p-6">
-            <CardContent className="p-0">
-              <Shield className="w-8 h-8 text-trust-green mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">Government Registered</h3>
-              <p className="text-sm text-muted-foreground">Legally authorized with the Government of Pakistan</p>
-            </CardContent>
-          </Card>
-          
-          <Card className="glow-border hover-lift text-center p-6">
-            <CardContent className="p-0">
-              <Award className="w-8 h-8 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">NTN Verified</h3>
-              <p className="text-sm text-muted-foreground">Official business registration and tax compliance</p>
-            </CardContent>
-          </Card>
+        {/* Company Highlights */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           
           <Card className="glow-border hover-lift text-center p-6">
             <CardContent className="p-0">
@@ -71,7 +55,14 @@ const About = () => {
                 className="w-20 h-20 rounded-full object-cover border-4 border-primary/20"
               />
               <div>
-                <h4 className="text-xl font-bold mb-1">Hamid Saifullah</h4>
+                <a 
+                  href="https://www.linkedin.com/in/hamid-saifullah-baa10b292/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  <h4 className="text-xl font-bold mb-1">Hamid Saifullah</h4>
+                </a>
                 <p className="text-primary font-medium mb-2">Co-Founder & Technical Architect</p>
                 <p className="text-muted-foreground">
                   Visionary leader with expertise in AI systems, full-stack development, and strategic technology implementation.
@@ -87,7 +78,14 @@ const About = () => {
                 className="w-20 h-20 rounded-full object-cover border-4 border-secondary/20"
               />
               <div>
-                <h4 className="text-xl font-bold mb-1">Ahmed Sarfaraz Tatla</h4>
+                <a 
+                  href="https://www.linkedin.com/in/ahmed-tatla-36a458268/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-secondary transition-colors"
+                >
+                  <h4 className="text-xl font-bold mb-1">Ahmed Sarfaraz Tatla</h4>
+                </a>
                 <p className="text-secondary font-medium mb-2">Co-Founder & Innovation Director</p>
                 <p className="text-muted-foreground">
                   Strategic innovator specializing in software architecture, business development, and cutting-edge solutions.

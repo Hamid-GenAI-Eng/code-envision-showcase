@@ -66,10 +66,10 @@ const EnterpriseNavigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? "bg-white/95 backdrop-blur-lg shadow-elevation border-b border-border/50" 
-        : "bg-transparent"
+        ? 'bg-background/80 backdrop-blur-md shadow-elevation border-b border-border' 
+        : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
@@ -82,11 +82,6 @@ const EnterpriseNavigation = () => {
                   alt="Code Envision" 
                   className="w-12 h-12 rounded-xl object-cover shadow-card"
                 />
-                <div className="absolute -top-1 -right-1">
-                  <Badge className="bg-status-online text-white text-xs px-2 py-0.5 rounded-full">
-                    Enterprise
-                  </Badge>
-                </div>
               </div>
               <div>
                 <h1 className={`font-space-grotesk font-bold text-xl ${
@@ -97,7 +92,7 @@ const EnterpriseNavigation = () => {
                 <p className={`text-xs font-medium ${
                   isScrolled ? "text-muted-foreground" : "text-white/70"
                 }`}>
-                  Enterprise Solutions
+                  Solutions
                 </p>
               </div>
             </div>

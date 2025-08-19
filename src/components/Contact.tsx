@@ -165,13 +165,8 @@ const Contact = () => {
           </Card>
         </div>
 
-        {/* Trust Badge */}
-        <div className="text-center mt-16 pt-8 border-t border-white/20">
-          <div className="inline-flex items-center space-x-2 bg-white/10 rounded-full px-6 py-3 backdrop-blur-sm">
-            <div className="w-3 h-3 bg-trust-green rounded-full animate-pulse"></div>
-            <span className="text-white/80 text-sm">Registered with Government of Pakistan • NTN Verified</span>
-          </div>
-        </div>
+        {/* Space for margin */}
+        <div className="mt-16"></div>
       </div>
     </section>
   );

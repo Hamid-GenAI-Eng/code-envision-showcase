@@ -163,18 +163,18 @@ const CaseStudies = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             {caseStudies.map((study, index) => (
-              <Card key={index} className="group border-border hover:shadow-elevation transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+              <Card key={index} className="group border-border hover:shadow-elevation hover:white transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                 <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 relative">
                   <img 
                     src={study.image} 
                     alt={study.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent group-hover:from-primary/70" />
                   <div className="absolute bottom-4 left-4 right-4">
                     <div className="flex flex-wrap gap-2">
                       {study.technology.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="bg-white/10 text-white border-white/20">
+                        <Badge key={tech} variant="secondary" className="bg-white/10 text-white border-white/20 group-hover:bg-primary group-hover:text-white group-hover:border-primary/20">
                           {tech}
                         </Badge>
                       ))}
@@ -182,14 +182,14 @@ const CaseStudies = () => {
                   </div>
                 </div>
                 
-                <CardContent className="p-8">
+                <CardContent className="p-8 group-hover:bg-primary-foreground/95">
                   <div className="flex items-center gap-4 mb-4">
-                    <Badge variant="outline">{study.industry}</Badge>
-                    <div className="flex items-center text-sm text-muted-foreground">
+                    <Badge variant="outline" className="group-hover:border-primary-foreground">{study.industry}</Badge>
+                    <div className="flex items-center text-sm text-muted-foreground group-hover:text-foreground/80">
                       <Clock className="w-4 h-4 mr-1" />
                       {study.duration}
                     </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
+                    <div className="flex items-center text-sm text-muted-foreground group-hover:text-foreground/80">
                       <Users className="w-4 h-4 mr-1" />
                       {study.teamSize}
                     </div>
@@ -199,24 +199,24 @@ const CaseStudies = () => {
                     {study.title}
                   </h3>
                   
-                  <p className="text-muted-foreground text-sm mb-6">
-                    <strong>Challenge:</strong> {study.challenge}
+                  <p className="text-muted-foreground text-sm mb-6 group-hover:text-foreground">
+                    <strong className="text-foreground group-hover:text-primary">Challenge:</strong> {study.challenge}
                   </p>
                   
-                  <p className="text-muted-foreground text-sm mb-8">
-                    <strong>Solution:</strong> {study.solution}
+                  <p className="text-muted-foreground text-sm mb-8 group-hover:text-foreground">
+                    <strong className="text-foreground group-hover:text-primary">Solution:</strong> {study.solution}
                   </p>
                   
                   <div className="grid grid-cols-3 gap-4 mb-8">
                     {study.results.map((result, idx) => (
                       <div key={idx} className="text-center">
-                        <div className="text-2xl font-bold text-primary mb-1">{result.metric}</div>
-                        <div className="text-xs text-muted-foreground">{result.description}</div>
+                        <div className="text-2xl font-bold text-primary mb-1 group-hover:text-primary">{result.metric}</div>
+                        <div className="text-xs text-muted-foreground group-hover:text-foreground/80">{result.description}</div>
                       </div>
                     ))}
                   </div>
                   
-                  <Button variant="outline" className="w-full group/btn">
+                  <Button variant="outline" className="w-full group/btn group-hover:border-primary group-hover:text-primary">
                     View Full Case Study
                     <ExternalLink className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>

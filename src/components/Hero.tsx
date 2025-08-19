@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Play, Sparkles, Zap, Code2, Brain, Globe } from "lucide-react";
+import { ArrowRight, Play, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-mesh">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-mesh pt-24">
       {/* Cinematic Background System */}
       <div className="absolute inset-0">
         {/* Primary gradient layer */}
@@ -29,25 +29,8 @@ const Hero = () => {
         
         {/* Parallax floating elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
-        </div>
-      </div>
-      
-      {/* Interactive Tech Elements */}
-      <div className="absolute top-20 left-10 animate-float hover-glow cursor-pointer">
-        <div className="p-3 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-          <Code2 className="w-8 h-8 text-primary-glow" />
-        </div>
-      </div>
-      <div className="absolute top-40 right-20 animate-float hover-glow cursor-pointer" style={{ animationDelay: '2s' }}>
-        <div className="p-3 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-          <Brain className="w-6 h-6 text-secondary-glow" />
-        </div>
-      </div>
-      <div className="absolute bottom-32 left-20 animate-float hover-glow cursor-pointer" style={{ animationDelay: '4s' }}>
-        <div className="p-3 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-          <Globe className="w-10 h-10 text-accent-brand/80" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"></div>
         </div>
       </div>
 
@@ -94,7 +77,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="xl" 
-              className="min-w-[240px] border-white/30 text-white hover:bg-white/10 font-semibold text-lg px-8 py-4"
+              className="min-w-[240px] bg-white text-elite-dark hover:bg-white/90 font-semibold text-lg px-8 py-4 shadow-cinematic"
             >
               <Play className="mr-2 w-5 h-5" />
               Watch Showcase

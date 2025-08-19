@@ -34,10 +34,6 @@ const Footer = () => {
               Transforming visionary ideas into powerful software solutions. 
               Building the future through innovation and excellence.
             </p>
-            <div className="flex items-center space-x-2 text-trust-green">
-              <Shield className="w-4 h-4" />
-              <span className="text-sm">Government Registered</span>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -107,19 +103,9 @@ const Footer = () => {
 
         {/* Trust Indicators */}
         <div className="border-t border-white/20 pt-8 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="flex items-center justify-center space-x-2">
-              <Shield className="w-5 h-5 text-trust-green" />
-              <span className="text-white/80">Government Registered</span>
-            </div>
-            <div className="flex items-center justify-center space-x-2">
-              <Award className="w-5 h-5 text-primary" />
-              <span className="text-white/80">NTN Verified Business</span>
-            </div>
-            <div className="flex items-center justify-center space-x-2">
-              <Heart className="w-5 h-5 text-secondary" />
-              <span className="text-white/80">100% Client Satisfaction</span>
-            </div>
+          <div className="flex items-center justify-center space-x-2">
+            <Heart className="w-5 h-5 text-secondary" />
+            <span className="text-white/80">100% Client Satisfaction</span>
           </div>
         </div>
 
