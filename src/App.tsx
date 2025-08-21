@@ -22,6 +22,8 @@ import FinancialServices from "./pages/industries/FinancialServices";
 import Healthcare from "./pages/industries/Healthcare";
 import Manufacturing from "./pages/industries/Manufacturing";
 import Ecommerce from "./pages/industries/Ecommerce";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +54,8 @@ const App = () => (
           <Route path="/industries/healthcare" element={<Healthcare />} />
           <Route path="/industries/manufacturing" element={<Manufacturing />} />
           <Route path="/industries/ecommerce" element={<Ecommerce />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

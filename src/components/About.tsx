@@ -6,6 +6,15 @@ import hamidProfile from "@/assets/hamid-profile.jpg";
 import ahmedProfile from "@/assets/ahmed-profile.jpg";
 
 const About = () => {
+  const handleConnectClick = () => {
+    const email = 'info.codeenvision@gmail.com';
+    const subject = 'Connect with Code Envision Founders';
+    const body = 'Hello Founders,\n\nI would like to connect with you regarding ';
+    
+    // Using Gmail's compose URL
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(gmailUrl, '_blank');
+  };
   return (
     <section id="about" className="py-20 bg-gradient-card">
       <div className="max-w-7xl mx-auto px-6">
@@ -25,19 +34,19 @@ const About = () => {
         {/* Company Highlights */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           
-          <Card className="glow-border hover-lift text-center p-6">
+          <Card className="glow-border hover-lift text-center p-6 hover:bg-primary group">
             <CardContent className="p-0">
-              <Users className="w-8 h-8 text-secondary mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">Expert Team</h3>
-              <p className="text-sm text-muted-foreground">Seasoned professionals with proven track records</p>
+              <Users className="w-8 h-8 text-secondary mx-auto mb-4 group-hover:text-white transition-colors" />
+              <h3 className="font-semibold mb-2 group-hover:text-white transition-colors">Expert Team</h3>
+              <p className="text-sm text-muted-foreground group-hover:text-white/90 transition-colors">Seasoned professionals with proven track records</p>
             </CardContent>
           </Card>
           
-          <Card className="glow-border hover-lift text-center p-6">
+          <Card className="glow-border hover-lift text-center p-6 hover:bg-primary group">
             <CardContent className="p-0">
-              <MapPin className="w-8 h-8 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">Pakistan Based</h3>
-              <p className="text-sm text-muted-foreground">Serving global clients from our Pakistan headquarters</p>
+              <MapPin className="w-8 h-8 text-primary mx-auto mb-4 group-hover:text-white transition-colors" />
+              <h3 className="font-semibold mb-2 group-hover:text-white transition-colors">Pakistan Based</h3>
+              <p className="text-sm text-muted-foreground group-hover:text-white/90 transition-colors">Serving global clients from our Pakistan headquarters</p>
             </CardContent>
           </Card>
         </div>
@@ -93,7 +102,13 @@ const About = () => {
               </div>
             </div>
 
-            <Button variant="premium" size="lg" className="mt-4">
+            <Button 
+              variant="premium" 
+              size="lg" 
+              className="mt-4"
+              onClick={handleConnectClick}
+              type="button"
+            >
               Connect With Founders
             </Button>
           </div>

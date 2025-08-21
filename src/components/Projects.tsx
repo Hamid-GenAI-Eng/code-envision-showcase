@@ -1,3 +1,4 @@
+import React from 'react';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,6 +13,13 @@ import {
 } from "lucide-react";
 
 const Projects = () => {
+  const scrollToContact = () => {
+    const section = document.querySelector('#contact');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const projects = [
     {
       title: "AI-Powered Analytics Platform",
@@ -85,7 +93,7 @@ const Projects = () => {
         {/* Featured Projects */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {projects.filter(p => p.featured).map((project, index) => (
-            <Card key={index} className="group overflow-hidden glow-border hover-lift">
+            <Card key={index} className="group overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
               <div className="relative h-64 overflow-hidden">
                 <img 
                   src={project.image} 
@@ -93,13 +101,13 @@ const Projects = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
+                <Badge className="absolute top-4 left-4 bg-secondary text-secondary-foreground">
                   {project.category}
                 </Badge>
               </div>
               
               <CardHeader>
-                <CardTitle className="text-xl font-space-grotesk group-hover:text-primary transition-colors">
+                <CardTitle className="text-xl font-space-grotesk">
                   {project.title}
                 </CardTitle>
                 <p className="text-muted-foreground leading-relaxed">
@@ -144,7 +152,17 @@ const Projects = () => {
                 
                 {/* Actions */}
                 <div className="flex gap-3">
-                  <Button variant="premium" size="sm" className="flex-1">
+                  <Button 
+                    variant="premium" 
+                    size="sm" 
+                    onClick={scrollToContact}
+                    className={`flex-1 ${
+                      project.title.includes("Healthcare Management System") || 
+                      project.title.includes("Financial Trading Platform")
+                        ? "bg-black hover:bg-black/90 text-white"
+                        : ""
+                    }`}
+                  >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     View Project
                   </Button>
@@ -160,7 +178,7 @@ const Projects = () => {
         {/* Other Projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {projects.filter(p => !p.featured).map((project, index) => (
-            <Card key={index} className="group glow-border hover-lift">
+            <Card key={index} className="group transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
               <div className="relative h-48 overflow-hidden">
                 <img 
                   src={project.image} 
@@ -174,7 +192,7 @@ const Projects = () => {
               </div>
               
               <CardContent className="p-6">
-                <h3 className="text-lg font-space-grotesk font-semibold mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-space-grotesk font-semibold mb-2">
                   {project.title}
                 </h3>
                 <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
@@ -188,11 +206,46 @@ const Projects = () => {
                     </Badge>
                   ))}
                 </div>
+
+                {/* Metrics */}
+                <div className="grid grid-cols-3 gap-4 mb-4 p-3 bg-muted/50 rounded-lg">
+                  <div className="text-center">
+                    <div className="flex items-center justify-center mb-1">
+                      <Users className="w-4 h-4 text-primary mr-1" />
+                      <span className="font-bold text-primary">{project.metrics.users}</span>
+                    </div>
+                    <span className="text-xs text-muted-foreground">Active Users</span>
+                  </div>
+                  <div className="text-center">
+                    <div className="flex items-center justify-center mb-1">
+                      <Zap className="w-4 h-4 text-secondary mr-1" />
+                      <span className="font-bold text-secondary">{project.metrics.performance}</span>
+                    </div>
+                    <span className="text-xs text-muted-foreground">Uptime</span>
+                  </div>
+                  <div className="text-center">
+                    <div className="flex items-center justify-center mb-1">
+                      <TrendingUp className="w-4 h-4 text-trust-green mr-1" />
+                      <span className="font-bold text-trust-green">{project.metrics.growth}</span>
+                    </div>
+                    <span className="text-xs text-muted-foreground">Growth</span>
+                  </div>
+                </div>
                 
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm" className="flex-1">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    onClick={scrollToContact}
+                    className={`flex-1 ${
+                      project.title.includes("Healthcare Management System") || 
+                      project.title.includes("Financial Trading Platform")
+                        ? "bg-black hover:bg-black/90 text-white border-black"
+                        : ""
+                    }`}
+                  >
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    View
+                    View Project
                   </Button>
                   <Button variant="ghost" size="sm">
                     <Github className="w-4 h-4" />
@@ -212,7 +265,23 @@ const Projects = () => {
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Join our portfolio of successful projects. Let's discuss how we can transform your vision into a powerful, scalable solution.
           </p>
-          <Button variant="hero" size="lg">
+          <Button 
+            variant="hero" 
+            size="lg"
+            onClick={() => {
+              const section = document.querySelector('#contact');
+              if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Focus on the name input after scrolling
+                setTimeout(() => {
+                  const nameInput = document.querySelector('input[name="name"]') as HTMLInputElement;
+                  if (nameInput) {
+                    nameInput.focus();
+                  }
+                }, 800);
+              }
+            }}
+          >
             Start Your Project
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>

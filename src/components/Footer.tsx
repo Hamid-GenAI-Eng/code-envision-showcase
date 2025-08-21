@@ -8,7 +8,7 @@ import {
   Shield,
   Award
 } from "lucide-react";
-import logoImage from "@/assets/logo.jpg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,13 +22,11 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <img 
-                src={logoImage} 
-                alt="Code Envision" 
+                src="/Logo.jpg" 
+                alt="Company Logo" 
                 className="w-10 h-10 rounded-lg object-cover"
               />
-              <span className="text-xl font-bold font-space-grotesk">
-                Code Envision
-              </span>
+              {/* Removed company name for logo-only branding */}
             </div>
             <p className="text-white/70 leading-relaxed">
               Transforming visionary ideas into powerful software solutions. 
@@ -116,9 +114,8 @@ const Footer = () => {
               © {currentYear} Code Envision. All rights reserved. Founded July 2025.
             </div>
             <div className="flex items-center space-x-6 text-sm text-white/60">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">Legal</a>
+              <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>

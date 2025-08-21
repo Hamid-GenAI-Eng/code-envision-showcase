@@ -4,6 +4,19 @@ import { ArrowRight, Play, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
+  const scrollToCaseStudies = () => {
+    const section = document.querySelector('#projects');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const scrollToContact = () => {
+    const section = document.querySelector('#contact');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-mesh pt-24">
       {/* Cinematic Background System */}
@@ -46,20 +59,20 @@ const Hero = () => {
           </div>
           
           {/* Hero Headlines - Enterprise Scale */}
-          <h1 className="display-xl text-white mb-6 leading-none">
-            <span className="block mb-4">
+          <h1 className="display-xl text-white mb-5 leading-none">
+            <span className="block mb-3">
               <span className="gradient-text bg-gradient-to-r from-primary-glow to-secondary-glow bg-clip-text text-transparent">
                 Transform
               </span>{" "}
               <span className="text-white">Vision Into</span>
             </span>
-            <span className="block text-4xl md:text-5xl lg:text-6xl font-playfair-display font-bold text-white">
+            <span className="block text-4xl md:text-5xl lg:text-5xl font-playfair-display font-bold text-white">
               Digital Excellence
             </span>
           </h1>
           
           {/* Value Proposition */}
-          <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-12 leading-relaxed font-medium">
+          <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-10 leading-relaxed">
             We architect enterprise-grade solutions that scale. From AI-powered platforms to comprehensive 
             ERP systems, we deliver technology that transforms industries and accelerates growth.
           </p>
@@ -68,16 +81,18 @@ const Hero = () => {
           <div className="flex flex-col lg:flex-row gap-6 justify-center items-center mb-16">
             <Button 
               size="xl" 
-              className="min-w-[240px] bg-white text-elite-dark hover:bg-white/90 font-semibold text-lg px-8 py-4 shadow-cinematic"
+              onClick={scrollToContact}
+              className="min-w-[220px] bg-white text-elite-dark hover:bg-white/90 font-semibold text-lg px-7 py-3.5 shadow-cinematic"
             >
-              Request Demo
+              Discuss Your Project
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             
             <Button 
               variant="outline" 
               size="xl" 
-              className="min-w-[240px] bg-white text-elite-dark hover:bg-white/90 font-semibold text-lg px-8 py-4 shadow-cinematic"
+              onClick={scrollToCaseStudies}
+              className="min-w-[220px] bg-white text-elite-dark hover:bg-white/90 font-semibold text-lg px-7 py-3.5 shadow-cinematic"
             >
               <Play className="mr-2 w-5 h-5" />
               Watch Showcase
@@ -87,20 +102,20 @@ const Hero = () => {
           {/* Enterprise Trust Indicators */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl font-black text-white mb-2">50+</div>
-              <div className="text-white/70 font-medium">Enterprise Clients</div>
+              <div className="text-3xl font-black text-white mb-2">50+</div>
+              <div className="text-white/70 text-base">Enterprise Clients</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-black text-white mb-2">99.9%</div>
-              <div className="text-white/70 font-medium">System Uptime</div>
+              <div className="text-3xl font-black text-white mb-2">99.9%</div>
+              <div className="text-white/70 text-base">System Uptime</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-black text-primary-glow mb-2">24/7</div>
-              <div className="text-white/70 font-medium">Enterprise Support</div>
+              <div className="text-3xl font-black text-primary-glow mb-2">24/7</div>
+              <div className="text-white/70 text-base">Enterprise Support</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-black text-status-online mb-2">Verified</div>
-              <div className="text-white/70 font-medium">Gov. Registered</div>
+              <div className="text-3xl font-black text-status-online mb-2">Verified</div>
+              <div className="text-white/70 text-base">Gov. Registered</div>
             </div>
           </div>
         </div>

@@ -15,12 +15,58 @@ import {
   Briefcase,
   Phone
 } from "lucide-react";
-import logoImage from "@/assets/logo.jpg";
+import { useLocation } from "react-router-dom";
+// Removed logoImage import, using public/logo.jpg
 
 const EnterpriseNavigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const location = useLocation();
+  
+  const isSpecialPage = location.pathname === '/privacy-policy' || location.pathname === '/terms-of-service';
+
+  // Render a simplified, fully visible navbar on policy pages to ensure readability
+  if (isSpecialPage) {
+    return (
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 text-white backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+            <a href="/" className="inline-flex items-center">
+              <img src="/Logo.jpg" alt="Code Envision" className="w-12 h-12 rounded-full object-cover" />
+            </a>
+          </div>
+
+          <div className="hidden lg:flex items-center space-x-4">
+            <a href="/" className="text-white px-3 py-1 rounded-md hover:bg-white/5">Home</a>
+            <a href="/services" className="text-white px-3 py-1 rounded-md hover:bg-white/5">Services</a>
+            <a href="/industries" className="text-white px-3 py-1 rounded-md hover:bg-white/5">Industries</a>
+            <a href="/about" className="text-white px-3 py-1 rounded-md hover:bg-white/5">About</a>
+            <a href="/contact" className="text-white px-3 py-1 rounded-md hover:bg-white/5">Contact</a>
+          </div>
+
+          <div className="flex items-center space-x-3">
+            <a href="/contact" className="hidden lg:inline-block bg-white text-slate-900 px-3 py-1 rounded-md">Contact</a>
+            <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden p-2 rounded-md">
+              {isOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
+            </button>
+          </div>
+        </div>
+
+        {isOpen && (
+          <div className="lg:hidden bg-slate-900/95 border-t border-white/10">
+            <div className="p-6 space-y-4">
+              <a href="/" className="block text-white">Home</a>
+              <a href="/services" className="block text-white">Services</a>
+              <a href="/industries" className="block text-white">Industries</a>
+              <a href="/about" className="block text-white">About</a>
+              <a href="/contact" className="block text-white">Contact</a>
+            </div>
+          </div>
+        )}
+      </nav>
+    );
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,49 +111,47 @@ const EnterpriseNavigation = () => {
     }
   };
 
+  const getNavItemClass = () => {
+    if (isSpecialPage) return "text-white hover:text-primary-glow hover:bg-white/10";
+    return isScrolled
+      ? "text-foreground hover:text-primary hover:bg-primary-muted"
+      : "text-white hover:text-primary-glow hover:bg-white/10";
+  };
+
+  const isRouteActive = (href: string) => location.pathname === href;
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-background/80 backdrop-blur-md shadow-elevation border-b border-border' 
-        : 'bg-transparent'
+      isSpecialPage
+        ? 'bg-transparent'
+        : isScrolled 
+          ? 'bg-background/80 backdrop-blur-md shadow-elevation border-b border-border' 
+          : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo & Brand */}
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-3">
-              <div className="relative">
-                <img 
-                  src={logoImage} 
-                  alt="Code Envision" 
-                  className="w-12 h-12 rounded-xl object-cover shadow-card"
-                />
-              </div>
-              <div>
-                <h1 className={`font-space-grotesk font-bold text-xl ${
-                  isScrolled ? "text-foreground" : "text-white"
-                }`}>
-                  Code Envision
-                </h1>
-                <p className={`text-xs font-medium ${
-                  isScrolled ? "text-muted-foreground" : "text-white/70"
-                }`}>
-                  Solutions
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className="relative">
+          {/* Logo positioned at the absolute left-most of the nav */}
+          <img
+            src="/Logo.jpg"
+            alt="Company Logo"
+            className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full object-cover shadow-card z-30 pointer-events-auto"
+          />
+          {/* Pill container that gives the visible rounded boundary over hero */}
+          <div className={`w-full max-w-[1200px] mx-auto rounded-[22px] border-[2px] px-5 py-2 transition-all duration-300 ${
+            isScrolled
+              ? 'bg-white/6 shadow-elevation border-white/95 ring-2 ring-white/60 backdrop-blur-md'
+              : 'bg-white/6 border-white/85 ring-2 ring-white/35 backdrop-blur-md'
+          }`}>
+            <div className="flex items-center justify-between h-14">
+          {/* left placeholder so content doesn't collide with absolute logo */}
+          <div className="pl-12 hidden lg:block" />
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4">
             {/* Home Button */}
             <a 
               href="/"
-              className={`px-4 py-2 rounded-lg transition-all font-medium ${
-                isScrolled 
-                  ? "text-foreground hover:text-primary hover:bg-primary-muted" 
-                  : "text-white hover:text-primary-glow hover:bg-white/10"
-              }`}
+              className={`px-3 py-1.5 rounded-full transition-all font-medium ${getNavItemClass()} ${isRouteActive('/') ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-sm' : ''}`}
             >
               Home
             </a>
@@ -117,7 +161,7 @@ const EnterpriseNavigation = () => {
               onMouseEnter={() => setActiveSubmenu('services')}
               onMouseLeave={() => setActiveSubmenu(null)}
             >
-              <button className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all ${
+              <button className={`flex items-center space-x-2 px-3 py-1.5 rounded-lg transition-all ${
                 isScrolled 
                   ? "text-foreground hover:text-primary hover:bg-primary-muted" 
                   : "text-white hover:text-primary-glow hover:bg-white/10"
@@ -213,7 +257,7 @@ const EnterpriseNavigation = () => {
             {/* Regular Nav Items */}
             <button 
               onClick={() => handleNavClick("about")}
-              className={`px-4 py-2 rounded-lg transition-all font-medium ${
+              className={`px-3 py-1.5 rounded-lg transition-all font-medium ${
                 isScrolled 
                   ? "text-foreground hover:text-primary hover:bg-primary-muted" 
                   : "text-white hover:text-primary-glow hover:bg-white/10"
@@ -224,7 +268,7 @@ const EnterpriseNavigation = () => {
             
             <button 
               onClick={() => handleNavClick("projects")}
-              className={`px-4 py-2 rounded-lg transition-all font-medium ${
+              className={`px-3 py-1.5 rounded-lg transition-all font-medium ${
                 isScrolled 
                   ? "text-foreground hover:text-primary hover:bg-primary-muted" 
                   : "text-white hover:text-primary-glow hover:bg-white/10"
@@ -235,22 +279,14 @@ const EnterpriseNavigation = () => {
 
             <a 
               href="/insights"
-              className={`px-4 py-2 rounded-lg transition-all font-medium ${
-                isScrolled 
-                  ? "text-foreground hover:text-primary hover:bg-primary-muted" 
-                  : "text-white hover:text-primary-glow hover:bg-white/10"
-              }`}
+              className={`px-3 py-1.5 rounded-full transition-all font-medium ${getNavItemClass()} ${isRouteActive('/insights') ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-sm' : ''}`}
             >
               Insights
             </a>
 
             <a 
               href="/careers"
-              className={`px-4 py-2 rounded-lg transition-all font-medium ${
-                isScrolled 
-                  ? "text-foreground hover:text-primary hover:bg-primary-muted" 
-                  : "text-white hover:text-primary-glow hover:bg-white/10"
-              }`}
+              className={`px-3 py-1.5 rounded-full transition-all font-medium ${getNavItemClass()} ${isRouteActive('/careers') ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-sm' : ''}`}
             >
               Careers
             </a>
@@ -270,18 +306,6 @@ const EnterpriseNavigation = () => {
             >
               <Phone className="w-4 h-4 mr-2" />
               Contact
-            </Button>
-            
-            <Button 
-              size="sm"
-              className={`${
-                isScrolled 
-                  ? "bg-primary text-white hover:bg-primary-hover" 
-                  : "bg-white text-elite-dark hover:bg-white/90"
-              } shadow-card`}
-            >
-              Request Demo
-              <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
 
@@ -352,14 +376,12 @@ const EnterpriseNavigation = () => {
                   <Phone className="w-4 h-4 mr-2" />
                   Contact Us
                 </Button>
-                <Button className="w-full justify-center">
-                  Request Demo
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
               </div>
             </div>
           </div>
         )}
+          </div>
+        </div>
       </div>
     </nav>
   );
