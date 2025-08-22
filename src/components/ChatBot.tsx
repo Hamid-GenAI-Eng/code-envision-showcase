@@ -208,15 +208,7 @@ const ChatBot = () => {
         )}
       </Button>
 
-      {/* Online Status Indicator */}
-      {!isOpen && (
-        <div className="fixed bottom-[4.5rem] right-8 z-40 bg-status-online text-white text-xs px-2 py-1 rounded-full shadow-md animate-fade-in">
-          <div className="flex items-center space-x-1">
-            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-            <span>Online</span>
-          </div>
-        </div>
-      )}
+  {/* Online status removed per request */}
     </>
   );
 };
