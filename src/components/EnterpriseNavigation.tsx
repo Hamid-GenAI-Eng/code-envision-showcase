@@ -15,7 +15,7 @@ import {
   Briefcase,
   Phone
 } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 // Removed logoImage import, using public/logo.jpg
 
 const EnterpriseNavigation = () => {
@@ -109,6 +109,26 @@ const EnterpriseNavigation = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const navigate = useNavigate();
+
+  const handleGetConsultation = () => {
+    // if already on home, scroll to #contact
+    if (location.pathname === '/') {
+      const el = document.getElementById('contact');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
+
+    // otherwise navigate to home then scroll after a short delay
+    navigate('/');
+    setTimeout(() => {
+      const el = document.getElementById('contact');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 300);
   };
 
   const getNavItemClass = () => {
@@ -212,7 +232,7 @@ const EnterpriseNavigation = () => {
                         <h4 className="font-semibold text-foreground">Ready to get started?</h4>
                         <p className="text-sm text-muted-foreground">Let's discuss your project requirements</p>
                       </div>
-                      <Button className="shadow-card">
+                      <Button className="shadow-card" onClick={handleGetConsultation}>
                         Get Consultation
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>

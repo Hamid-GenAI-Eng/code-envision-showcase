@@ -59,20 +59,20 @@ const Hero = () => {
           </div>
           
           {/* Hero Headlines - Enterprise Scale */}
-          <h1 className="display-xl text-white mb-5 leading-none">
-            <span className="block mb-3">
+          <h1 className="text-white mb-5 leading-none">
+            <span className="block mb-3 text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
               <span className="gradient-text bg-gradient-to-r from-primary-glow to-secondary-glow bg-clip-text text-transparent">
                 Transform
               </span>{" "}
               <span className="text-white">Vision Into</span>
             </span>
-            <span className="block text-4xl md:text-5xl lg:text-5xl font-playfair-display font-bold text-white">
+            <span className="block text-3xl md:text-4xl lg:text-4xl font-playfair-display font-bold text-white">
               Digital Excellence
             </span>
           </h1>
           
           {/* Value Proposition */}
-          <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/80 max-w-4xl mx-auto mb-10 leading-relaxed">
             We architect enterprise-grade solutions that scale. From AI-powered platforms to comprehensive 
             ERP systems, we deliver technology that transforms industries and accelerates growth.
           </p>
@@ -80,9 +80,9 @@ const Hero = () => {
           {/* CTA System - Enterprise Focus */}
           <div className="flex flex-col lg:flex-row gap-6 justify-center items-center mb-16">
             <Button 
-              size="xl" 
+              size="lg" 
               onClick={scrollToContact}
-              className="min-w-[220px] bg-white text-elite-dark hover:bg-white/90 font-semibold text-lg px-7 py-3.5 shadow-cinematic"
+              className="min-w-[200px] bg-white text-elite-dark hover:bg-white/90 font-semibold text-base px-6 py-3 shadow-cinematic"
             >
               Discuss Your Project
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -90,9 +90,9 @@ const Hero = () => {
             
             <Button 
               variant="outline" 
-              size="xl" 
+              size="lg" 
               onClick={scrollToCaseStudies}
-              className="min-w-[220px] bg-white text-elite-dark hover:bg-white/90 font-semibold text-lg px-7 py-3.5 shadow-cinematic"
+              className="min-w-[200px] bg-white text-elite-dark hover:bg-white/90 font-semibold text-base px-6 py-3 shadow-cinematic"
             >
               <Play className="mr-2 w-5 h-5" />
               Watch Showcase
